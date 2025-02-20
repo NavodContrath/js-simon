@@ -35,4 +35,18 @@ function numbersGenerator() {
         randomlist.push(randomNumber)
     }
 }
+function countdownTimer(timer) {
+    clock = setInterval(() => {
+        countdownEl.innerText = timer--
+        if (timer == -1) {
+            clearInterval(clock)
+            instructionsEl.innerText = "Inserisci i numeri che hai visto precedentemente, nell'ordine che preferisci."
+            countdownEl.classList.add("d-none")
+            numberListEl.classList.add("d-none")
+            formEl.classList.remove("d-none")
+            console.log(numberListEl, countdownEl, formControlEl);
+        }
+    }, 1000)
+}
+countdownTimer(30)
 
