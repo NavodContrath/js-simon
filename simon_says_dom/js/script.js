@@ -15,14 +15,24 @@ Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel f
 - create var linked to html elements
 - 
 */
+//*VAR*//
 const countdownEl = document.getElementById("countdown")
 const instructionsEl = document.getElementById("instructions")
-const numberListEl = document.getElementById("number-list")
-const formEl = document.getElementById("answer-form")
+const numberListEl = document.getElementById("numbers-list")
+const formEl = document.getElementById("answers-form")
 const inputGroupEl = document.getElementById("input-group")
-const formControlEl = document.querySelector(".form-control")
+const formControlEl = document.getElementsByClassName("form-control")
 const submitBtnEl = document.querySelector(".btn")
 const messageEl = document.getElementById("message")
 
-formControlEl.setAttribute("placeholder", Math.floor(Math.random() * 10 + 1))
-console.log(formControlEl);
+let rightNumbers = 0
+let randomlist = []
+//*FUNCTIONS*//
+function numbersGenerator() {
+    for (let i = 0; i < 5; i++) {
+        randomNumber = Math.floor(Math.random() * 50 + 1)
+        numberListEl.insertAdjacentHTML("beforeend", `<li>${randomNumber}</li>`)
+        randomlist.push(randomNumber)
+    }
+}
+
