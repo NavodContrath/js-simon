@@ -13,7 +13,7 @@ Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel f
 /*
 📌SUMMARY:
 - create var linked to html elements
-
+- 
 */
 const countdownEl = document.getElementById("countdown")
 const instructionsEl = document.getElementById("instructions")
@@ -24,3 +24,5 @@ const formControlEl = document.querySelector(".form-control")
 const submitBtnEl = document.querySelector(".btn")
 const messageEl = document.getElementById("message")
 
+formControlEl.setAttribute("placeholder", Math.floor(Math.random() * 10 + 1))
+console.log(formControlEl);
