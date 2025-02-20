@@ -13,7 +13,9 @@ Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel f
 /*
 📌SUMMARY:
 - create var linked to html elements
-- 
+- create functions needed
+- submit form
+- give results
 */
 //*VAR*//
 const countdownEl = document.getElementById("countdown")
@@ -24,7 +26,6 @@ const inputGroupEl = document.getElementById("input-group")
 const formControlEl = document.getElementsByClassName("form-control")
 const submitBtnEl = document.querySelector(".btn")
 const messageEl = document.getElementById("message")
-
 let rightNumbers = 0
 let randomlist = []
 //*FUNCTIONS*//
@@ -51,5 +52,25 @@ function countdownTimer(timer) {
 //*TIMEOUTS*//
 setTimeout(numbersGenerator(), 5000)
 setTimeout(countdownTimer(3), 5000)
+//*FORM SUBMIT*//
+formEl.addEventListener('submit', function numbersValidator() {
+    event.preventDefault()
+    for (let i = 0; i < randomlist.length; i++) {
+        const thisNumber = randomlist[i];
+        for (let i = 0; i < formEl.length; i++) {
+            const thisInput = formEl[i];
+            if (Number(thisInput.value) === thisNumber) {
+                rightNumbers += 1
+                messageEl.insertAdjacentHTML("beforeend", `<div>Hai azzeccato il numero: ${thisInput.value}</div>`);
+            } else {
+                rightNumbers += 0
+            }
+        }
+    }
+    submitBtnEl.disabled = true
+    messageEl.insertAdjacentHTML("beforeend", `<div>In totale hai azzeccato ${rightNumbers} numeri!`)
+}
+)
+
 
 
