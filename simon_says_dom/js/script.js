@@ -48,5 +48,8 @@ function countdownTimer(timer) {
         }
     }, 1000)
 }
-countdownTimer(30)
+//*TIMEOUTS*//
+setTimeout(numbersGenerator(), 5000)
+setTimeout(countdownTimer(3), 5000)
+
 
