@@ -68,6 +68,9 @@ formEl.addEventListener('submit', function numbersValidator() {
     }
     submitBtnEl.disabled = true
     messageEl.insertAdjacentHTML("beforeend", `<div>In totale hai azzeccato ${rightNumbers} numeri!`)
+    instructionsEl.innerText = "Qui sotto troverai i numeri che avrai indovinato!"
+    countdownEl.classList.remove("d-none")
+    countdownEl.innerText = "COMPLIMENTI!"
 }
 )
 
