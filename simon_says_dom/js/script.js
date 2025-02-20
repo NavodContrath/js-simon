@@ -45,13 +45,12 @@ function countdownTimer(timer) {
             countdownEl.classList.add("d-none")
             numberListEl.classList.add("d-none")
             formEl.classList.remove("d-none")
-            console.log(numberListEl, countdownEl, formControlEl);
         }
     }, 1000)
 }
 //*TIMEOUTS*//
 setTimeout(numbersGenerator(), 5000)
-setTimeout(countdownTimer(3), 5000)
+setTimeout(countdownTimer(30), 5000)
 //*FORM SUBMIT*//
 formEl.addEventListener('submit', function numbersValidator() {
     event.preventDefault()
